@@ -51,14 +51,39 @@ header {
       background-color: var(--amarillo);
       padding: 25px 0;
 }
-header div.logo {
-      width: 130px;
-      margin-left: 25px;
+header div.container-logo {
+      display: flex;
+      margin-bottom: 15px;
 }
-header div.busqueda {
+header div.container-logo div.logo {
+      width: 50%;
+      /* width: 130px;
+      margin-left: 25px; */
+      padding: 5px;
+}
+header div.container-logo div.busqueda {
+      width: 50%;
+      padding: 5px;
+      position: relative;
+      /* display: flex;
       margin-left: 15px;
       width: 170px;
-      margin-bottom: 10px;
+      margin-bottom: 10px; */
+}
+header div.container-logo div.busqueda input {
+      border: 1px solid white;
+      border-radius: 5px;
+      height: 35px;
+      width: 100%;
+}
+header div.container-logo div.busqueda button {
+      position: absolute;
+      right: 9px;
+      top: 10px;
+      padding: 5px 4px;
+      background-color: white;
+      border: none;
+      color: var(--gris-oscuro);
 }
 header p {
       text-align: center;
@@ -66,10 +91,11 @@ header p {
 }
 header nav {
       display: none;
-}
-header nav ul.lista-superior {
       margin-bottom: 15px;
 }
+/* header nav ul.lista-superior {
+      margin-bottom: 15px;
+} */
 header nav ul li a {
       font-size: var(--parrafos);
 }
@@ -78,46 +104,79 @@ header div.burger-menu {
       background-color: var(--celeste);
       border-radius: 5px;
       width: 15px;
-      padding: 7px;
+      padding: 10px;
       margin: 25px auto 0;
 }
 /* MAIN */
 main {
+}
+main img.home_productos {
+      width: 100%;
+}
+main section {
       width: 90%;
       margin: auto;
+      display: flex;
+      flex-direction: column;
 }
 main section h4 {
       font-size: var(--titulos);
       color: var(--gris-oscuro);
       margin-bottom: 20px;
 }
+section div.productsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+}
 main section article {
       background-color: white;
       margin-bottom: 10px;
 }
-main section article div {
+main section article img {
+      width: 100%;
+      height: 300px;
+}
+main section article div.container-detalle {
       border-top: 1px solid var(--gris-claro);
       padding: 15px;
+      position: relative;
 }
+main section article div div.container-precio {
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      margin-bottom: 15px;
+}
+
 main section article p.main--precio {
       font-size: var(--precio);
+      width: 30%;
 }
 main section article p.main--descuento {
       font-size: var(--descuento);
       color: var(--verde);
-      padding-bottom: 15px;
+      width: 70%;
+      margin-left: 10px;
 }
 main section article h5 {
-      display: none;
+      font-size: var(--descripcion);
+      color: var(--gris-oscuro);
 }
+
 main section article div div.main--envio {
-      width: 1.2em;
-      height: 1.2em;
-      color: var(--verde);
+      display: block;
+      font-size: 16px;
+      padding: 5px;
+      width: 20px;
+      height: 20px;
       border: 1px solid var(--verde);
+      background-color: #fff;
       border-radius: 50%;
-      padding-left: 5px;
-      padding-top: 5px;
+      position: absolute;
+      right: 20px;
+      top: -15px;
+      color: var(--verde);
 }
 
 /* FOOTER */
@@ -138,17 +197,21 @@ footer span {
       font-size: var(--parrafos);
 }
 
-@media (min-width: 361px) {
+@media (min-width: 768px) {
       header div.burger-menu {
             display: none;
       }
       header nav {
-            display: block;
+            display: flex;
+            justify-content: space-between;
       }
-      main section article h5 {
-            display: inline;
-            font-size: var(--descripcion);
-            color: var(--gris-oscuro);
+      header nav ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+      }
+      header nav ul li {
+            margin: 5px;
       }
       main section article {
             box-shadow: 0px 0px 10px rgb(100, 100, 100);
